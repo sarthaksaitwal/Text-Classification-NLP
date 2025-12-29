@@ -1,9 +1,11 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import(
+    Input,
     Embedding,
     LSTM,
     Dense,
-    Dropout
+    Dropout,
+    Bidirectional
 )
 
 def build_lstm_model(
@@ -19,21 +21,24 @@ def build_lstm_model(
 
     model=Sequential()
 
+    # Explicit input layer (IMPORTANT)
+    model.add(Input(shape=(max_length,)))
+
     # Embedding layer
     model.add(
         Embedding(
             input_dim=vocab_size,
             output_dim=embedding_dim,
-            input_length=max_length
+            # input_length=max_length
         )
     )
 
     # LSTM layer
     model.add(
-        LSTM(
+        Bidirectional(LSTM(
             lstm_units,
             return_sequences=False
-        )
+        ))
     )
 
     # Dropout for regularization
