@@ -5,3 +5,4 @@ nltk
 keras
 matplotlib
 scikit-learn
+flask
