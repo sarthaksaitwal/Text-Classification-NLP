@@ -3,3 +3,5 @@ numpy
 tensorflow
 nltk
 keras
+matplotlib
+scikit-learn
