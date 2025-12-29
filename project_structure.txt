@@ -1,0 +1,40 @@
+text-classification-lstm/
+│
+├── data/
+│   ├── raw/                         # Original AG News CSV
+│   └── processed/                   # Cleaned & tokenized data (optional)
+│
+├── notebooks/                       # Optional: EDA / experiments
+│   └── exploration.ipynb
+│
+├── src/
+│   ├── preprocessing/
+│   │   ├── __init__.py
+│   │   └── text_cleaning.py         # Text cleaning (LSTM style)
+│   │
+│   ├── tokenization/
+│   │   ├── __init__.py
+│   │   └── tokenizer.py             # Tokenization & padding
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── lstm_model.py             # LSTM / Bi-LSTM architecture
+│   │
+│   ├── training/
+│   │   ├── __init__.py
+│   │   └── train_lstm.py             # Training loop
+│   │
+│   ├── evaluation/
+│   │   ├── __init__.py
+│   │   └── metrics.py                # Accuracy, F1, confusion matrix
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       └── dataset_loader.py         # Load AG News CSV
+│
+├── experiments/
+│   └── results.md                    # Observations & analysis
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
